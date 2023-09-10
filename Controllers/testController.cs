@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend_stage_one.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
     [ServiceFilter(typeof(ResponseConverter))]
     public class testController : ControllerBase

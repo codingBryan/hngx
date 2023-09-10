@@ -4,6 +4,6 @@ namespace backend_stage_one.Services
 {
     public interface IJsonResponseService
     {
-        Task<Response> GetResponseAsync(string slack_name,string track);
+        Response GetResponseAsync(string slack_name,string track);
     }
 }
