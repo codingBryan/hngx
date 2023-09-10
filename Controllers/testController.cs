@@ -6,11 +6,12 @@ namespace backend_stage_one.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ServiceFilter(typeof(ResponseConverter))]
     public class testController : ControllerBase
     {
         private readonly IJsonResponseService service;
 
-        public testController(IJsonResponseService service  )
+        public testController(IJsonResponseService service)
         {
             this.service = service;
         }
