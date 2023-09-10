@@ -12,8 +12,8 @@ namespace backend_stage_one.Services
                 current_day = DateTime.Now.ToString("dddd"),
                 utc_time = DateTime.UtcNow.ToString("o"),
                 track = track,
-                github_file_url = "",
-                github_repo_url = "",
+                github_file_url = "https://github.com/codingBryan/hngx/blob/master/Program.cs",
+                github_repo_url = "https://github.com/codingBryan/hngx",
             };
 
             return res;
