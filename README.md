@@ -12,6 +12,7 @@ cd into the project directory and run the command "dotnet watch run"  in your te
 For stage 2 task
 
 # Testing
+
 .net 7 Framework comes packaged with swaggerUI, a tool to test the endpoints with ease
 To access swaggerUI for test purposes, go to the test endpoint: https://backendstepone.azurewebsites.net/swagger/index.html
 
