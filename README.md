@@ -17,19 +17,28 @@ To access swaggerUI for test purposes, go to the test endpoint: https://backends
 
 Endpoints
 1. POST https://backendstepone.azurewebsites.net/api
+   
      Request Json body format is:  {"name":"Brian"}
 
      The response expected is a json object with the format: { "success":true, "message": "user created successfully" }
    
 3. GET https://backendstepone.azurewebsites.net/api/1
+   
      The response expected is a json object with the format: { "id":true, "message": "Brian" }
    
 5. PUT https://backendstepone.azurewebsites.net/api/1
+6. 
      Request Json body format is: { "name":"new_name" }
    
      The response expected is a json object with the format: { "success":true, "message": "user updated successfully" }
    
-6. DELETE https://backendstepone.azurewebsites.net/api/{user_Id}
+7. DELETE https://backendstepone.azurewebsites.net/api/{user_Id}
      The response expected is a json object with the format: { "success":true, "message": "user created successfully"}
 
+Design Documents
 
+1.Datababase design ER diagram link : https://lucid.app/lucidchart/044f62b0-74e1-4f58-82c1-1d0e3d4c52e3/edit?invitationId=inv_0836a381-1939-4e71-b44a-393e9e39ee6b&page=0_0#
+
+2.UML Class diagram link : https://lucid.app/lucidchart/8d5828d6-9148-47b3-9c86-e95731a10b2f/edit?beaconFlowId=E5194CC01B6C262A&invitationId=inv_5924091e-1b59-4ec2-be48-8e98d36713b2&page=HWEp-vi-RSFO#
+
+3.
