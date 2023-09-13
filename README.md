@@ -22,20 +22,21 @@ To access swaggerUI for test purposes, go to the test endpoint: https://backends
    
      Request Json body format is:  {"name":"Brian"}
 
-     The response expected is a json object with the format: { "success":true, "message": "user created successfully" }
+     The response expected is a json object with the format: { "id": "{user_id}",name="Brian" }
    
 # 2. GET https://backendstepone.azurewebsites.net/api/1
    
-     The response expected is a json object with the format: { "id":true, "message": "Brian" }
+     The response expected is a json object with the format: { "id":1, "message": "Brian" }
    
 # 3. PUT https://backendstepone.azurewebsites.net/api/1
 
      Request Json body format is: { "name":"new_name" }
    
-     The response expected is a json object with the format: { "success":true, "message": "user updated successfully" }
+     The response expected is a json object with the format: { "data" : {id:1, "name":"new_name" }, "success":true, "message": "user updated successfully" }
    
-# 4. DELETE https://backendstepone.azurewebsites.net/api/{user_Id}
-     The response expected is a json object with the format: { "success":true, "message": "user created successfully"}
+# 4. DELETE https://backendstepone.azurewebsites.net/api/1
+
+     The response expected is a json object with the format: { "data" : {id:1, "name":"Briae" }. "success":true, "message": "user deleted successfully"}
 
 ## Design Documents
 

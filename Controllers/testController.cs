@@ -14,15 +14,6 @@ namespace backend_stage_one.Controllers
         {
             this.service = service;
         }
-        [HttpGet]
-        public IActionResult Get()
-        {
-            string slack_name = HttpContext.Request.Query["slack_name"];
-            string track = HttpContext.Request.Query["track"];
-
-            var res = service.GetResponseAsync(slack_name, track);
-            return Ok(res);
-        }
 
         [HttpPost]
         public async Task<IActionResult> CreateUser(NewPersonDTO user)

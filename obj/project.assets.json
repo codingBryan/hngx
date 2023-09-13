@@ -1604,9 +1604,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brian\\code\\backend_stage_one\\backend_stage_one.csproj",
-      "projectName": "backend_stage_one",
-      "projectPath": "C:\\Users\\brian\\code\\backend_stage_one\\backend_stage_one.csproj",
+      "projectUniqueName": "C:\\Users\\brian\\code\\backend_stage_one\\backend.csproj",
+      "projectName": "backend",
+      "projectPath": "C:\\Users\\brian\\code\\backend_stage_one\\backend.csproj",
       "packagesPath": "C:\\Users\\brian\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\brian\\code\\backend_stage_one\\obj\\",
       "projectStyle": "PackageReference",

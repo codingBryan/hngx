@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "XWMPwK2uwVByODQUGBXZLjCuX93/svEVM3HqBAYh3bM=",
-  "Source": "backend_stage_one",
-  "BasePath": "_content/backend_stage_one",
+  "Hash": "7/yvsnDRTixX0vVer35KSjS1HzfM4rGxA/gc1emwSdw=",
+  "Source": "backend",
+  "BasePath": "_content/backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

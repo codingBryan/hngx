@@ -14,33 +14,25 @@ namespace backend_stage_one.Services
             this.mapper = mapper;
             this.context = context;
         }
-        public async Task<Res> CreateUser(NewPersonDTO personDTO)
+        public async Task<Person> CreateUser(NewPersonDTO personDTO)
         {
-            Res res = new Res();
-            Person person = mapper.Map<Person>(personDTO);
-            try
-            {
-                await context.users.AddAsync(person);
-                await context.SaveChangesAsync();
-                res.message = "Created user successfully";
-            }catch(DbUpdateException ex)
-            {
-                res.success = false;
-                res.message = "Failed to create user";
-            }
 
-            return res;
+            Person person = mapper.Map<Person>(personDTO);
+            await context.users.AddAsync(person);
+            await context.SaveChangesAsync();
+            return person;
         }
 
-        public async Task<Res> DeleteUser(int id)
+        public async Task<Res<Person>> DeleteUser(int id)
         {
-            Res res = new Res();
+            Res<Person> res = new Res<Person>();
             try
             {
 
                 Person? user = await context.users.Where(t => t.Id == id).SingleOrDefaultAsync();
                 if (user != null)
                 {
+                    res.data = user;
                     await context.users.Where(t => t.Id == id).ExecuteDeleteAsync();
                     await context.SaveChangesAsync();
                     res.message = "user was deleted successfully";
@@ -59,20 +51,6 @@ namespace backend_stage_one.Services
             return res;
         }
 
-        public Response GetResponseAsync(string slack_name, string track)
-        {
-            Response res = new Response
-            {
-                slack_name = slack_name,
-                current_day = DateTime.Now.ToString("dddd"),
-                utc_time = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
-                track = track,
-                github_file_url = "https://github.com/codingBryan/hngx/blob/master/Program.cs",
-                github_repo_url = "https://github.com/codingBryan/hngx",
-            };
-
-            return res;
-        }
         Person p = new Person();
         public async Task<Person> GetUserById(int id)
         {
@@ -86,9 +64,9 @@ namespace backend_stage_one.Services
              
         }
 
-        public async Task<Res> UpdateUser(int id,NewPersonDTO personDTO)
+        public async Task<Res<Person>> UpdateUser(int id,NewPersonDTO personDTO)
         {
-            Res res = new Res();
+            Res<Person> res = new Res<Person>();
             try
             {
                 var user = await context.users.FindAsync(id);
@@ -97,9 +75,10 @@ namespace backend_stage_one.Services
                 {
                     throw new Exception("Invalid user ID");
                 }
-                user.name = personDTO.name;
 
+                user.name = personDTO.name;
                 await context.SaveChangesAsync();
+                res.data = user;
                 res.message = "Update was succesful";
             }catch(Exception ex)
             {
