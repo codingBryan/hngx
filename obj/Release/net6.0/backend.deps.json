@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "backend_stage_one/1.0.0": {
+      "backend/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.EntityFrameworkCore": "7.0.10",
@@ -15,7 +15,7 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "backend_stage_one.dll": {}
+          "backend.dll": {}
         }
       },
       "AutoMapper/12.0.1": {
@@ -290,7 +290,7 @@
     }
   },
   "libraries": {
-    "backend_stage_one/1.0.0": {
+    "backend/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

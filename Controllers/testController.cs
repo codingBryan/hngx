@@ -14,6 +14,13 @@ namespace backend_stage_one.Controllers
         {
             this.service = service;
         }
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var response = "Welcome to the API. Post the user's name to this endpoint to create a user";
+            
+            return Ok(response);
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateUser(NewPersonDTO user)
