@@ -17,7 +17,7 @@ namespace backend_stage_one.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var response = "Welcome to the API. Post the user's name to this endpoint to create a user";
+            var response = "Welcome to the API. To test the API, visit https://backendstepone.azurewebsites.net/swagger/index.html or use a tool of your own";
             
             return Ok(response);
         }
